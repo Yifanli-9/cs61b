@@ -30,7 +30,8 @@ public double calcDistance(Planet b2){
 
 public double calcForceExertedBy(Planet b2){
 	double forc;
-	static final double G=6.67e-11;
+	double G=6.67e-11;
+	double dis;
 	dis=this.calcDistance(b2);
 	forc=G*this.mass*b2.mass/Math.pow(dis,2);
 	return forc;
@@ -40,6 +41,9 @@ public double calcForceExertedBy(Planet b2){
 }
 public double calcForceExertedByX(Planet b2){
 	double forcx;
+	double forc;
+	double dis;
+	double dx;
 	forc=this.calcForceExertedBy(b2);
 	dis=this.calcDistance(b2);
 	dx=b2.xxPos-this.xxPos;
@@ -49,6 +53,9 @@ public double calcForceExertedByX(Planet b2){
 }
 public double calcForceExertedByY(Planet b2){
 	double forcy;
+	double dis;
+	double dy;
+	double forc;
 	forc=this.calcForceExertedBy(b2);
 	dis=this.calcDistance(b2);
 	dy=b2.yyPos-this.yyPos;
@@ -60,7 +67,7 @@ public double calcForceExertedByY(Planet b2){
 
 public double calcNetForceExertedByX(Planet[] Planet){
 	double netforce=0.0;
-	leng=Planet.length;
+
 	
 	for(int i=0;i<Planet.length;i=i+1){
 		if(this.equals(Planet[i])){
@@ -76,7 +83,7 @@ public double calcNetForceExertedByX(Planet[] Planet){
 
 public double calcNetForceExertedByY(Planet[] Planet){
 	double netforce=0.0;
-	leng=Planet.length;
+
 	for(int i=0;i<Planet.length;i=i+1){
 		if(this.equals(Planet[i])){
 			continue;
