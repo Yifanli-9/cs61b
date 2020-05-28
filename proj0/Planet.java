@@ -5,14 +5,14 @@ public double xxVel;
 public double yyVel;
 public double mass;
 public String imgFileName;
-public double dis;
-public double dx;
-public double dy;
-public double forc;
-public double forcx;
-public double forcy;
-public static final double G=6.67e-11;
-public int leng;
+double dis;
+double dx;
+double dy;
+double forc;
+double forcx;
+double forcy;
+static final double G=6.67e-11;
+int leng;
 
 public Planet(double xP, double yP, double xV, 
 double yV, double m, String img){
