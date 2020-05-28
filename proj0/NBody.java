@@ -9,11 +9,11 @@ public static double readRadius(String Fileload){
 	return radius;
 }
 
-public static Body[] readPlanets(String Fileload){
+public static Planet[] readPlanets(String Fileload){
     In in=new In(Fileload);
 	int n=in.readInt();
 	double radius=in.readDouble();
-	Body[] b =new Body[n];
+	Planet[] b =new Planet[n];
 	for(int i=0;i<n;i=i+1){
 	double xP=in.readDouble();
 	double yP=in.readDouble();
@@ -21,7 +21,7 @@ public static Body[] readPlanets(String Fileload){
 	double yV=in.readDouble();
 	double m=in.readDouble();
 	String img=in.readString();
-	b[i]=new Body(xP,yP,xV,yV,m,img);
+	b[i]=new Planet(xP,yP,xV,yV,m,img);
 	}
 return b;
 }
@@ -33,7 +33,7 @@ public static void main	(String[] args){
 	double radius=NBody.readRadius(filename);
 	int n;
 	double t=0.0;
-    Body[] b=NBody.readBodies(filename);
+    Planet[] b=NBody.readPlanets(filename);
 	StdDraw.enableDoubleBuffering();
 	StdDraw.setScale(-radius,radius);
 	StdDraw.clear();
